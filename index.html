@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience exquisite fine dining at our restaurant. Indulge in our carefully crafted menu, elegant ambiance and exceptional service.">
+    <title>Elegance Restaurant - Fine Dining Experience</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-logo">
+                    <a href="#home">Elegance <span class="accent-text">Dining</span></a>
+                </div>
+                <div class="navbar-right">
+                    <ul id="navbar-menu" class="navbar-menu">
+                        <li><a href="#home" class="navbar-link active" data-translate="home">Home</a></li>
+                        <li><a href="#about" class="navbar-link" data-translate="about">About</a></li>
+                        <li><a href="#menu" class="navbar-link" data-translate="menu">Menu</a></li>
+                        <li><a href="#gallery" class="navbar-link" data-translate="gallery">Gallery</a></li>
+                        <li><a href="#reservation" class="navbar-link" data-translate="reservation">Reservation</a></li>
+                        <li><a href="#contact" class="navbar-link" data-translate="contact">Contact</a></li>
+                    </ul>
+                    <div class="language-selector">
+                        <select id="language-select" aria-label="Select Language">
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </div>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-on-scroll">A Culinary <span class="accent-text">Experience</span><br>Like No Other</h1>
+                <p class="hero-description animate-on-scroll">Indulge in an extraordinary dining experience with our exquisite cuisine, curated by renowned chefs and served in an elegant atmosphere.</p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#reservation" class="btn-primary">Make a Reservation</a>
+                    <a href="#menu" class="btn-outline">Explore Our Menu</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title animate-on-scroll">Our <span class="accent-text">Story</span></h2>
+                    <p class="about-text animate-on-scroll">
+                        Founded in 2023, Elegance Dining brings the timeless elegance of fine dining to the heart of the city. Our restaurant offers an exceptional dining experience that celebrates the rich culinary heritage of contemporary gastronomy.
+                    </p>
+                    <p class="about-text animate-on-scroll">
+                        Our founder, Chef Michael, trained in prestigious kitchens before bringing his passion for creating unforgettable dining experiences to our establishment. Today, Elegance Dining stands as a top-rated restaurant, known for its exceptional food and impeccable service.
+                    </p>
+                    <div class="about-stats animate-on-scroll">
+                        <div class="stat-item">
+                            <div class="stat-number">#1</div>
+                            <div class="stat-label">In City</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.9</div>
+                            <div class="stat-label">Google Rating</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number">5000+</div>
+                            <div class="stat-label">Happy Guests</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <div class="image-container"></div>
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu">
+        <div class="container">
+            <h2 class="section-title centered animate-on-scroll">Our <span class="accent-text">Menu</span></h2>
+            <p class="section-description animate-on-scroll">Experience our carefully crafted seasonal offerings</p>
+            
+            <div class="menu-tabs animate-on-scroll">
+                <button class="menu-tab active" data-category="starters">Starters</button>
+                <button class="menu-tab" data-category="mains">Main Courses</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+                <button class="menu-tab" data-category="drinks">Drinks</button>
+            </div>
+            
+            <div id="menu-content">
+                <div id="starters" class="menu-category-content active">
+                    <h3 class="menu-category">Starters</h3>
+                    <div class="menu-items">
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Signature Starter</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">A delightful combination of fresh ingredients and unique flavors</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Chef's Special</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">Our chef's daily creation featuring seasonal ingredients</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Classic Starter</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">A timeless favorite prepared with our unique touch</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="mains" class="menu-category-content">
+                    <h3 class="menu-category">Main Courses</h3>
+                    <div class="menu-items">
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Signature Main</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">Our most popular dish, prepared with premium ingredients</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Chef's Recommendation</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">A special creation showcasing our culinary expertise</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Classic Main</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">A traditional favorite with our contemporary twist</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="desserts" class="menu-category-content">
+                    <h3 class="menu-category">Desserts</h3>
+                    <div class="menu-items">
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Signature Dessert</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">A sweet masterpiece that will delight your senses</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Chef's Sweet Creation</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">A unique dessert experience crafted by our pastry chef</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Classic Dessert</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">A timeless sweet treat with our special touch</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="drinks" class="menu-category-content">
+                    <h3 class="menu-category">Drinks</h3>
+                    <div class="menu-items">
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Signature Cocktail</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">Our unique blend of premium spirits and fresh ingredients</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Wine Selection</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">Carefully curated wines from around the world</p>
+                        </div>
+                        <div class="menu-item animate-on-scroll">
+                            <div class="menu-item-title">
+                                <span>Non-Alcoholic Special</span>
+                                <span class="menu-item-price">###</span>
+                            </div>
+                            <p class="menu-item-description">Refreshing mocktails and specialty drinks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-footer animate-on-scroll">
+                <p>* All prices are subject to change and include applicable taxes</p>
+                <a href="#" class="btn-outline" id="download-menu">Download Full Menu (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <h2 class="section-title centered animate-on-scroll">Our <span class="accent-text">Gallery</span></h2>
+            <p class="section-description animate-on-scroll">Glimpses of our culinary artistry and ambiance</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3" alt="Restaurant dish">
+                    <div class="gallery-overlay">
+                        <h3>Signature Dish</h3>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3" alt="Restaurant interior">
+                    <div class="gallery-overlay">
+                        <h3>Elegant Ambiance</h3>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3" alt="Table setting">
+                    <div class="gallery-overlay">
+                        <h3>Table Setting</h3>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1581349485608-9469926a8e5e?ixlib=rb-4.0.3" alt="Chef preparing dishes">
+                    <div class="gallery-overlay">
+                        <h3>Culinary Artistry</h3>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3" alt="Special cocktail">
+                    <div class="gallery-overlay">
+                        <h3>Signature Cocktails</h3>
+                    </div>
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3" alt="Wine selection">
+                    <div class="gallery-overlay">
+                        <h3>Fine Wine Selection</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section reservation">
+        <div class="container">
+            <h2 class="section-title centered animate-on-scroll">Make a <span class="accent-text">Reservation</span></h2>
+            <p class="section-description animate-on-scroll">We look forward to serving you an unforgettable experience</p>
+            
+            <div class="reservation-content">
+                <form id="reservation-form" class="reservation-form animate-on-scroll" action="https://formspree.io/f/your-formspree-id" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" id="time" name="time" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" max="20" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="special-requirements">Special Requirements</label>
+                        <textarea id="special-requirements" name="special-requirements" rows="4" class="form-input" placeholder="Dietary restrictions, allergies, special occasions..."></textarea>
+                    </div>
+                    <div class="form-group form-footer">
+                        <p class="form-note">All reservations will be confirmed via phone call within 24 hours.</p>
+                        <button type="submit" class="btn-primary">Request Reservation</button>
+                    </div>
+                </form>
+                
+                <div class="reservation-image animate-on-scroll">
+                    <div class="opening-hours">
+                        <h3>Opening Hours</h3>
+                        <ul>
+                            <li>Monday - Friday: <span>12:00 - 15:00, 19:00 - 23:00</span></li>
+                            <li>Saturday - Sunday: <span>12:00 - 23:00</span></li>
+                        </ul>
+                        <a href="tel:+1-234-567-8900" class="btn-outline">Call Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title centered animate-on-scroll">Contact <span class="accent-text">Us</span></h2>
+            <div class="contact-content">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>123 Restaurant Street, City, Country</p>
+                            <a href="#" class="directions-link" target="_blank" rel="noopener noreferrer">Get Directions</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Opening Hours</h3>
+                            <p>Monday - Sunday: 12:00 - 23:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+1-234-567-8900">+1 (234) 567-8900</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@elegance-dining.com">info@elegance-dining.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map animate-on-scroll">
+                    <div id="mapbox-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Elegance <span class="accent-text">Dining</span></h2>
+                    <p>Fine Dining Experience</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Explore</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#menu">Menu</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Visit</h3>
+                        <ul>
+                            <li><a href="#reservation">Reservation</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elegance Dining. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
